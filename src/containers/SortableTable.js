@@ -35,7 +35,6 @@ class SortableTable extends React.Component {
         if (!this.state.empty) {
             const {columns, content} = this.state;
 
-
             let currentSortMethod = 'default';
 
             switch (sortMethod) {

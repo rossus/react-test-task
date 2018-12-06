@@ -9,18 +9,16 @@ const SortableHeader = (props) => {
                 {columns.map((element, index) => {
                     if (index === columns.length - 1) {
                         return(
-                            <th key={index - 1} onClick={() => onClick(index, element.sort)}>
+                            <th id="course-head" colSpan="3" key={index}
+                                onClick={() => onClick(index, element.sort)}>
                                 {element.label}
                             </th>
-                        )} else if (index === columns.length - 2) {
-                        return(
-                            <th key={columns.length}></th>
-                        )} else {
+                        )} else if (index !== columns.length - 2) {
                         return (
                             <th key={index} onClick={() => onClick(index, element.sort)}>
                                 {element.label}
                             </th>
-                    )}
+                    )} else return null
                 })}
             </tr>
         </thead>
